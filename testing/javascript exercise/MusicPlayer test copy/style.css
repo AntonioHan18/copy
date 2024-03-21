@@ -1,0 +1,73 @@
+
+body {
+    background-image:url("./music/photo_2023-02-27_12-21-46.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+     box-shadow: 0px 0px 10px green inset; 
+    background-size:cover;
+
+}
+
+.container {
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    height:100vh;
+}
+
+.playListContainer{
+    margin-bottom:50px;
+}
+.trackItem{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0px 0px 10px green;
+    color:wheat;    
+    font-size:20px;
+    border-bottom:1px solid wheat;
+    /* rgb(76, 71, 71) */
+    padding :8px 0px;
+    cursor:pointer;
+    user-select:none;
+
+}
+
+.trackItem:active{
+    color:red;
+}
+
+.musicPlayer{
+    display : flex;
+    flex-direction: row;
+    
+}
+
+.controls{
+    font-size: 25px;
+     margin: 20px 30px;
+     cursor:pointer;
+     color:wheat
+}
+
+.pauseButton{
+    display:none;
+}
+
+
+.CurrentAndTotalTime{
+     color:wheat;    
+}
+
+#progressBar{
+    height: 5px;
+    width: 500px;
+    background-color:powderblue;
+    border-radius: 5px;
+ }
+ 
+ #currentProgress{
+     height : 100%;
+     width: 0px;
+     background-color:red;
+     border-radius: 5px;
+ }

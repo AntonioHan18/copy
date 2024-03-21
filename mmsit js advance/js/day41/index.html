@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            width: 2000px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form action="http://mms-it.com" id="register">
+
+        <input type="text" id="text" name="your_name" required>
+<br><br>
+        <select name="your_subject" id="subject" >
+            <option value="mm">Myanmar</option>
+            <option value="eng">English</option>
+            <option value="math">Math</option>
+
+        </select> 
+    <br><br>
+        <input type="file" id="uploader">
+
+        <br><br>
+        <button> submit</button>
+
+    </form>
+
+    <img src="../img/photo_2023-02-27_12-21-46.jpg" width="400px" alt="">
+    
+    <script>
+
+        const uploader = document.querySelector("#uploader");
+        const text = document.querySelector("#text");
+        const subject = document.querySelector("#subject");
+
+        uploader.addEventListener("change",()=>{
+            console.log(uploader.files[0]);
+        })
+
+        register.addEventListener("submit",(event)=>{
+            console.log("U submit");
+            console.log(event);
+            event.preventDefault();
+
+            const formData = new FormData(register);
+            console.log(formData.get("your_name"));
+            console.log(formData.get("your_subject"));
+
+            // subject.value = null;
+            register.reset();
+        })
+
+        // document.addEventListener("click",(event)=>{
+        //     console.clear();
+        //     console.log('click on document');
+        //     console.log(event);
+        //     });
+
+            window.addEventListener("load",()=>{
+                console.log("window fully load");
+            });
+            console.log(subject.value);
+
+            window.addEventListener("scroll",(event)=>{
+                console.clear();
+                console.log(event);
+                console.log(scrollX);
+                console.log(scrollY);
+            })
+
+    </script>
+
+</body>
+</html>

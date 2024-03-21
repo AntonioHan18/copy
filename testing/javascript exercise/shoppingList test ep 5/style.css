@@ -1,0 +1,46 @@
+body{
+    background-color:midnightblue;
+
+}
+
+.container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+     justify-content:center;
+     align-items: center;
+
+}
+
+.form-control{
+    max-width: 600px;
+    border-radius:10px;
+    margin-bottom:20px;
+
+     
+}   
+
+.shoppingListContainer{
+    color:gold;
+}
+
+.productName{
+    background-color:white;
+    margin-top: 10px;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+    user-select:none;
+    
+}
+
+.purchased{
+    text-decoration: line-through;
+    color:red;
+}
+
+.fa-trash-can{
+    color:gray;
+    margin-left:10px;
+
+}

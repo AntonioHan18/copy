@@ -1,0 +1,82 @@
+
+body{
+    background-color: #343a40;
+    color:#20c997;
+}
+
+.container{
+  max-width: 1000px;
+  margin-top:50px;
+  position:relative;
+  
+}
+
+.HamburgerMenuContainer{
+    position:absolute;
+    right:0px;
+    z-index: 1;
+}
+
+.Hamburger{
+    width:40px;
+    height:4px;
+    background-color:#cdedf6;
+    margin:3px;
+}
+
+.Line1,
+.Line2,
+.Line3
+{
+    transition:all 0.5s ease;
+}
+
+.hideLine2{
+    opacity: 0;
+}
+
+.rotate45Deg{
+    transform: rotate(45deg) translate(4px,9px);
+}
+
+.rotateMinus45Deg{
+    transform: rotate(-45deg) translate(4px,-9px);
+}
+
+.overLayMenu{   
+    width: 100vw;
+    height:100vh;
+    background-color: #042a2b;
+    position: absolute;
+    top:0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+li{
+    list-style:none;
+    font-size: 33px;
+    padding:10px;
+    user-select: none;
+    cursor: grab;
+    transition:transform 0.5s ease;
+}
+
+li:hover{
+    opacity: 0.6;
+}
+
+.showOverLayMenu{
+    opacity:1;
+}
+
+.MoveLiTagUp{
+    transform:translateY(-10px)
+}
+
+

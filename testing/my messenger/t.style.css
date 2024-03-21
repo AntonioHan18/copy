@@ -1,0 +1,90 @@
+.mother{margin-left: 400px;
+margin-right:400px;
+}
+
+.menu{
+    margin-bottom: 80px;
+}
+
+.header{margin-bottom: 20px;}
+
+.description{margin-bottom: 25px;}
+
+
+.menuItem {
+    text-decoration:none;
+color:inherit;
+margin-left: 20px;
+font-size: 18px;
+}
+
+.menuItem:hover{
+   border-bottom-style: solid;
+   
+}
+
+.blockElement{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: lightgray;
+    height: 35px;
+    width:200px ;
+border-radius: 15px;
+outline: none;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+.forcolor{background-color:#0084ff;
+    display: block;
+    border-radius: 24px;
+    border-style: none;
+    color:white;
+    padding:2px 20px 0px;
+    font-size: 19px;
+    height:40px;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.inputspan{ 
+    margin-bottom: 20px;
+
+}
+
+.password{
+margin-bottom: 20px;
+}
+
+.logo {
+    width:5%;
+    margin-right:300px;
+}
+
+.footers{
+    text-align:center;
+    font-size: 40px;
+    margin-top: 100px;
+    padding: 50px;
+}
+
+.left{display: inline-block;
+    width:40%
+}
+
+.inner{
+    width:50%;
+}
+
+.right{display: inline-block;
+    
+    width:50%;
+} 
+
+.appstoreimage{width:50%}
+
+.playstoreimage{width:50%}
+
+ 

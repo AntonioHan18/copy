@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/2245c9840d.js" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css"> -->
+  <link rel="shortcut icon" href="#">
+  <title>Powered By Han Htoo Zaw  </title>
+
+  <style>
+    
+body {
+  /* background-color: #7DBCDC; */
+  /* background-color: #0074B1; */
+
+  background-image:url("./music/photo_2023-02-27_12-21-46.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+     /* box-shadow: 0px 0px 10px green inset;  */
+    background-size:cover;
+}
+
+.container {
+  background-image:url("music/photo_2023-11-25_21-50-29.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+     /* box-shadow: 0px 0px 10px green inset;  */
+    background-size:contain;
+
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    height:100vh;
+    min-height: 100vh;
+    box-sizing: border-box;
+    /* font-size: 5vw; */
+}
+
+.playListContainer{
+    margin-bottom:50px;
+}
+.trackItem{
+    font-family: 'Georgia', 'Times, serif';
+    /* text-shadow: 0px 0px 10px green; */
+    color:yellow;
+    /* font-weight: bold;    */
+    font-size:22px;
+    font-style: italic;
+    border-bottom:0.5px solid #16c3fd;
+    /* rgb(76, 71, 71) */
+    padding :8px 0px;
+    cursor:pointer;
+    user-select: none;
+    
+}
+
+.trackItem:active{
+    color:wheat;
+}
+
+.musicPlayer{
+    display : flex;
+    flex-direction: row;
+}
+
+.controls{
+    font-size: 30px;
+     margin: 20px 30px;
+     cursor:pointer;
+     color:wheat;
+}
+
+.controls:active{
+  color:gold;
+}
+
+.pauseButton{
+    display:none;
+}
+
+
+.CurrentAndTotalTime{
+     color:wheat;    
+}
+
+#progressBar{
+    height: 5px;
+    width: 500px;
+    background-color:powderblue;
+    border-radius: 3px;
+ }
+ 
+ #currentProgress{
+     height : 100%;
+     width: 0px;
+     background-color:gold;
+     border-radius: 5px;
+ }  
+
+    @media only screen and (max-width: 500px) {
+  .container {
+    font-size: 5vw;
+  }
+
+  .trackItem {
+    font-size: 5vw; /* Adjusted font size for smaller screens */
+  }
+
+  .controls {
+    font-size: 7vw;
+    margin: 3vw;
+  }
+
+  #progressBar {
+    height: 2vw;
+    width: 60vw; 
+    margin-top: 2vw;
+  }
+} 
+
+
+@media only screen and (max-height: 400px) {
+  #progressBar {
+    display: none;
+  }
+
+  /* .trackItem {
+    font-size: 4.5vw;
+    margin-top: 20px; 
+  } */
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="playListContainer"></div>
+    <audio src="" class="audioTag">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <div class = "CurrentAndTotalTime">00:00 / 00:00</div>
+
+    <div id = "progressBar">
+      <div id = "currentProgress"></div>
+    </div>
+
+    <div class="musicPlayer">
+      <i class="fas fa-step-backward controls previousButton"></i>
+      <i class="fas fa-play-circle controls playButton"></i>
+      <i class="far fa-pause-circle controls pauseButton"></i>
+      <i class="fas fa-step-forward controls nextButton"></i>
+    </div>
+  </div>
+
+  <script>
+    
+const playListContainerTag = document.querySelector(".playListContainer");
+const audioTag = document.querySelector(".audioTag"); 
+const playButtonTag = document.querySelector(".playButton");
+const pauseButtonTag = document.querySelector(".pauseButton");
+const nextButtonTag = document.querySelector(".nextButton");
+const previousButtonTag = document.querySelector(".previousButton");
+const currentAndTotalTimeTag = document.querySelector(".CurrentAndTotalTime");
+const currentProgressTag = document.querySelector("#currentProgress");
+
+ const tracks = [
+   {trackId: "music/audio_2023-11-25_22-17-52.ogg", title: "Cx Tr Ko"},
+   {trackId: "music/audio_2023-11-25_22-18-00.ogg", title: "Thu thi par kwal"},
+   {trackId: "music/audio_2023-11-25_22-18-24.ogg", title: "A cx myr thy si mhr"},
+   {trackId: "music/audio_2023-11-25_22-17-34.ogg", title: "Khaung laung lay mi nay b"},
+ ];
+
+ for (let i = 0; i < tracks.length; i++) {
+  const trackTag = document.createElement("div");
+  trackTag.addEventListener("click",()=>{
+    currentPlayingIndex = i;
+   playSong();
+  })
+
+  trackTag.classList.add("trackItem");
+  const title = (i+1).toString() + ". " + tracks[i].title;
+  trackTag.innerText =  title;
+  playListContainerTag.append(trackTag)
+ }
+ 
+ let duration = 0;
+ let durationText = "00:00";
+
+audioTag.addEventListener("loadeddata", () => {
+  if (!isNaN(audioTag.duration)) {
+    duration = Math.floor(audioTag.duration);
+    durationText = durationAndCurrentTimeText(duration);
+  }
+});
+
+let currentTime = 0;
+ audioTag.addEventListener("timeupdate",()=>{
+   currentTime = Math.floor(audioTag.currentTime);
+  const currentTimeText = durationAndCurrentTimeText(currentTime);
+  const currentTimeTextAndDurationText = currentTimeText + " / " + durationText;
+  currentAndTotalTimeTag.textContent = currentTimeTextAndDurationText;
+  console.log(currentTimeText);
+  updateCurrentProgress(currentTime); 
+ })
+
+ const durationAndCurrentTimeText = (totalTime)=> {
+   const minute = Math.floor(totalTime/60);
+   const second = totalTime % 60;
+   
+    const minuteText = minute <10 ?  + "0" + minute.toString() : minute;
+    const secondText = second < 10 ? "0" + second.toString() : second;
+    return minuteText + " : " + secondText;
+  };
+
+  const updateCurrentProgress = (currentTime) => {
+     const currentProgressWidth =Math.floor((500 / duration) * currentTime);
+     currentProgressTag.style.width = currentProgressWidth.toString() + "px";
+     }
+
+     let isPlaying = false;
+     let currentPlayingIndex = 0;
+     playButtonTag.addEventListener("click",()=>{
+    //  let currentTime = Math.floor(audioTag.currentTime);
+     if (currentTime === 0) {
+      playSong();
+     }
+      isPlaying = true;
+      audioTag.play();
+      updatePlayAndPauseButton();
+     })
+
+     pauseButtonTag.addEventListener("click",()=>{
+      isPlaying = false;
+      audioTag.pause();
+      updatePlayAndPauseButton();
+     })
+
+     nextButtonTag.addEventListener("click",()=>{
+      if (currentPlayingIndex === tracks.length-1) {
+        return;
+      }
+      currentPlayingIndex +=1;
+      playSong();
+     })
+
+     previousButtonTag.addEventListener("click",()=>{
+      if (currentPlayingIndex === 0) {
+        return;
+      }
+      currentPlayingIndex -=1;
+      playSong();
+     })
+
+     const updatePlayAndPauseButton =()=>{
+      if (isPlaying) {
+        playButtonTag.style.display = "none";
+        pauseButtonTag.style.display = "inline";
+      }else{
+        playButtonTag.style.display = "inline";
+        pauseButtonTag.style.display = "none";
+      }
+     }
+
+     const playSong =()=>{
+        const songIdToPlay = tracks[currentPlayingIndex].trackId;
+        audioTag.src = songIdToPlay;
+        audioTag.play();
+        isPlaying = true;
+        updatePlayAndPauseButton();
+     }
+
+  </script>
+</body>
+</html>

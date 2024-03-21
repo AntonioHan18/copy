@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- border:20px;
+    border-color:gold;---->
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>css summary</title>
+
+<style>
+
+.parent{
+    background-color: grey;
+    padding: 50px 30px;
+    display:flex;
+    flex-wrap: wrap;
+   justify-content:center;
+   align-items:flex-end;
+   flex-direction: row;
+   border-style: double;
+   border-color:white;
+   border-width: 20px;
+   border-radius: 30px;
+   
+   
+}
+
+.one{
+    font-size: 40px;
+    color:red;
+    font-family: fantasy;
+    width:300px;
+    height:160px ;
+    background-color:cadetblue ;
+    padding: 20px;
+    margin: 20px;
+    border-style:groove;
+    border-radius:10px;
+    border-color:red;
+    border-width:11px;
+    
+   
+}
+.two{
+    color: blue;
+    font-size:33px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 200px;
+    height: 500px;
+    background-color:yellowgreen;
+    margin-left:10px;
+    border-style:ridge;
+    border-width:12px;
+    border-color:purple;
+    border-radius:10px;
+    padding:60px;
+}
+    
+.three {background-color:forestgreen;
+    padding: 20px;
+    height:500px;
+    border-style: solid;
+    border-color:gold;
+    border-width: 8px;
+    border-radius: 10px;
+    border:9px solid gold;
+}
+
+.forbutton{
+    border-style:groove;
+    outline-width: 20px;
+    outline-color: rgb(145, 31, 145);
+    outline-style: solid; 
+    background-color:gray;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+@media (max-width:1300px) {
+    .forbutton{
+        display: none;        
+    }
+}
+
+@media (max-width:900px){
+    .forbutton {display: block;
+    margin-top:70px}    
+}
+@media (max-width:1000px){
+    .fonttest{
+        display:none;
+    }
+}
+
+.fonttest{
+    font-family: 'Roboto', sans-serif; 
+    background-color: palevioletred;
+    width:800px;
+    overflow: hidden;
+    text-decoration: overline;
+    font-size: 18px;
+    color:whitesmoke;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 1px;
+    border-style: dashed;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+    .forimages{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    img{
+      width: 26%;
+      border:11px solid indigo;
+      transform:rotate(15deg)
+    }
+
+    .first{
+z-index:2;
+}
+.second{
+z-index:1;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="parent">
+    
+<div class="one">one
+</div>
+<p class="two">two</p>
+<h1 class="three" style="font-size:50px; margin: 40px 30px 10px; width:300px; ">three</h1>
+
+<div class="forbutton">
+<input type="text" placeholder="www" />
+<button style=" background-color:rgb(199, 134, 54)">Press</button>
+<input type="checkbox" />
+
+</div>
+</div>
+
+<p class="fonttest">Nobody can drag me down!face and fight how great I am.....
+</p>
+
+<div class="forimages">
+<img src= "images/hi.jpg" width="500px" height="400px" class="first"  />
+<img src="images/hehe.jpg" width="500px" height="400px" class="second" />
+<img src="images/hello.jpg" width="500px" height="400px" class="third" />
+</div>
+
+
+
+
+</body>
+</html>

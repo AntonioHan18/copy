@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day37</title>
+
+    <style>
+
+        .inputParent{
+            margin-top: 10px;
+        }
+
+        #result{
+            display: inline-block;
+            width:310px;
+         }
+
+    </style>
+
+<link rel="stylesheet" href="./node_modules/animate.css/animate.css">
+ 
+</head>
+<body>
+
+    <h1 class="animate__animated animate__fadeInDown">Area Calculator</h1>
+
+     <span>Result: <span id="result"></span> </span> 
+        
+        <button class="store" >Store</button>
+        <button class="clear" >Clear</button>
+   
+    <div class="inputParent">
+        <input type="text" class="width" placeholder="width">
+        <input type="text" class="breadth" placeholder="breadth">
+        <button class="calc">calculate</button>
+    </div>
+
+    <div >
+        <ol class="history" ></ol>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

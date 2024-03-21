@@ -1,0 +1,40 @@
+body {
+    background-color: #343a40;
+}
+
+.container{
+ display: flex;
+ flex-direction:column;
+ align-items:center;
+ border-style:outset;
+ border-width: 15px;
+}
+
+button{
+margin:10px;
+}
+
+.stopWatch{
+    color:aliceblue;
+    font-size: 100px;
+}
+
+.startButton{
+    background-color:gray;
+}
+.pauseButton{
+    background-color:gray;
+
+}
+.continueButton{
+    background-color:gray;
+
+}
+.restartButton{
+    background-color:gray;
+
+}
+
+.smallOnes{
+    color:gold;
+}

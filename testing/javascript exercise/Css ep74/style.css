@@ -1,0 +1,46 @@
+body{
+    background-color: #3d405b;
+    color:aqua;
+}
+
+.container{
+    max-width: 1000px;
+    margin-top: 40px;
+}
+
+/* .transition{
+    background-color: yellow;
+    width:200px;
+    height:20px;
+    margin-bottom:20px;
+    transition-property:all;
+    transition-duration: 5s;
+    transition-timing-function: ease;
+    transition-delay: 1s;
+    opacity: 1;
+    transition:all 5s ease-in-out 1s (shorthand); 
+}
+
+.startTransition{
+    width:500px;
+    background-color: red;
+    opacity: 0.5;
+} */
+
+.transform{
+    width:50px;
+    height:50px;
+    background-color: yellow;
+    margin-bottom: 30px;
+    transform-origin:left ;
+    /* transform:rotate(90deg); */
+    /* transform:scale(2); */
+    /* transform: translate(200px,300px); */
+    border-radius: 30px;
+    transition: transform 4s ease-in-out;
+}   
+
+.startTransition{
+    transform : scale(2) translateX(200px)
+
+}

@@ -1,0 +1,38 @@
+   
+
+table{
+    border: 2px solid black; 
+    margin-left: 100px;
+    border-collapse: collapse;
+}
+
+td {
+    color :blueviolet   ;
+    padding: 20px 30px;
+    border:1px solid blueviolet;
+}  
+
+
+tr:hover{
+background-color:lightgoldenrodyellow;
+}
+
+tr:nth-child(even) {
+    background-color: linen;
+}
+
+/* .user:hover {
+    user-select: none ;
+    color: red;
+} */
+
+td:active{
+    background-color: lightpink;
+}
+
+
+thead{
+color:lightblue;
+background-color: darkslateblue;
+
+}   

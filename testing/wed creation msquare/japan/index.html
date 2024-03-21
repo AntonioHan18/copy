@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- FontAwesome CSS (CDN link) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+        }
+
+        .navbar{
+            color: white;
+        }
+
+        .firstimg{
+            width: 100%;
+        }
+
+        main{
+            background-color: rgb(230, 11, 11);
+        }
+
+        .text{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+        }
+
+        .title{
+            margin-top: 30px;
+            text-align: center;
+            color:white;
+        }
+
+        .line{
+            width: 300px;
+            border-bottom: 3px solid white;
+            margin-bottom: 30px;
+        }
+
+
+        .footText{
+            color:rgb(230, 11, 11) ;
+        }
+
+        .footer{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .fab{
+            margin-top: 30px;
+            margin-right: 100px;
+        }        
+
+        .img{
+            border-radius: 2px;
+            /* width:250px */
+        }
+
+        @media (max-width: 767px) {
+        /* Mobile styles */
+
+        .container {
+            flex-direction: column;
+        }
+
+        .navbar {
+            /* Add responsive styles for the navbar on mobile */
+            text-align: center;
+        }
+
+        .navbar-brand {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .firstimg {
+            /* Adjust styles for the first image on mobile */
+            width: 100%;
+        }
+
+        .text {
+            /* Adjust styles for the text section on mobile */
+            text-align: center;
+        }
+
+        .title {
+            /* Adjust styles for the title on mobile */
+            margin-top: 20px;
+        }
+
+        .line {
+            /* Adjust styles for the line on mobile */
+            width: 200px;
+            margin: 20px auto;
+        }
+
+        .footer {
+            /* Adjust styles for the footer on mobile */
+            /* /* flex-direction: column; */
+            text-align: center;
+        } */
+
+        .fab {
+            /* Adjust styles for the Facebook icon on mobile */
+            margin-top: 10px;
+            margin-right: 0;
+        }
+    }
+
+    </style>
+    
+</head>
+<body>
+    
+    <main>
+
+        <nav class="navbar" >
+            <div class="container-fluid">
+              <a class="navbar-brand" style="color: white;">Navbar</a>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+
+          
+          <div>
+            <div>
+                <img src=" " alt="" class="firstimg">
+            </div>
+
+            <div class="text">
+                <h4 class="title">Title</h4>
+
+                <div class="line"></div>
+
+                <img src="" alt=""   class="img">
+
+                <p style="color: white; padding-bottom: 40px;">Lorem ipsum dolor issimore deleniti</p>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footText" >
+                <div>loren </div>
+                <div>loren fgf</div>
+                <div>loren gfgfggf</div>
+            </div>
+
+            <div>
+                <i class="fab fa-facebook-f"></i>
+            </div>
+
+        </div>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day40</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="p-3">
+
+    <label for="input">Text</label>
+    <input type="input" id="input">
+
+    <div>
+        <label for="fontSize">font Size</label>
+    <input type="range" id="fontSize" min="14" max="60" value="20" >
+    <span class="fontNumber"></span>
+    </div>
+
+    <div>
+        <label for="color">color</label>
+        <input type="color" id="color">
+    </div>
+
+    <div>
+        <label></label>select Font</label>
+        <select name="" id="family"></select>
+    </div>
+    
+    <hr>
+
+    <p class="text"></p>
+
+    <script>
+
+        const avaFonts =["monospace","Impact","Verdana","Georgia"];
+      
+        const input =document.querySelector("#input");
+        const text =document.querySelector(".text");
+        const fontSize =document.querySelector("#fontSize");
+        const fontNumber =document.querySelector(".fontNumber");
+        const color = document.querySelector("#color");
+        const family =document.querySelector("#family");
+
+        avaFonts.forEach(el => {
+            const option = document.createElement("option");
+            console.log(option);
+            option.innerHTML = el; 
+            option.value =el;
+            family.append(option);
+        });
+
+
+        input.addEventListener("keyup",()=>{
+            text.innerText = input.value;
+        });
+
+        fontSize.addEventListener("change",()=>{
+            text.style.fontSize = fontSize.value + "px";
+            fontNumber.innerText = fontSize.value + "px";
+        });
+
+        color.addEventListener("change",()=> {
+            text.style.color = color.value;
+        });
+
+    </script>
+</body>
+</html>
